@@ -1,0 +1,17 @@
+.chartContainer {
+  width: 70%;
+  height: 80vh;
+  margin: 0 auto;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  marginTop: 20px;
+}
+
+.ant-table-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}

@@ -1,0 +1,101 @@
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import Container from "../../../../components/Container";
+import Navbar from "../../../../components/Navbar";
+import styles from "./ResultadoBuscaVenda.module.css";
+
+const ResultadoBuscaVenda = () => {
+  const { query } = useParams();
+  const navigate = useNavigate();
+  const [vendas, setVendas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [sortBy, setSortBy] = useState("date");
+  const [sortDirection, setSortDirection] = useState("asc");
+  const [statusFilter, setStatusFilter] = useState(null);
+
+  useEffect(() => {
+    const fetchVendas = async () => {
+      try {
+        const params = new URLSearchParams(query);
+        let searchUrl = `http://localhost:8080/orders/fullSearch?${params.toString()}&orderBy=${sortBy}&sortDirection=${sortDirection}`;
+        console.log("URL de Busca:", searchUrl);
+        const response = await fetch(searchUrl);
+        if (response.ok) {
+          const data = await response.json();
+          setVendas(data);
+          setError(null);
+        } else {
+          setError("Erro ao buscar vendas:" + response.statusText);
+        }
+      } catch (error) {
+        setError("Erro ao buscar vendas:" + error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchVendas();
+  }, [query, sortBy, sortDirection]);
+
+  const handleSortByChange = (event) => {
+    setSortBy(event.target.value);
+  };
+
+  const handleSortDirectionChange = (event) => {
+    setSortDirection(event.target.value);
+  };
+
+  return (
+    <div>
+      <Navbar />
+      <Container>
+        <div className={styles.vendaContainer}>
+          <div className={styles.sortContainer}>
+            <select value={sortBy} onChange={handleSortByChange}>
+              <option value="date">Data</option>
+              <option value="total">Total</option>
+            </select>
+            <select value={sortDirection} onChange={handleSortDirectionChange}>
+              <option value="asc">ASC</option>
+              <option value="desc">DESC</option>
+            </select>
+          </div>
+          {vendas.map((venda) => (
+            <div key={venda.id} className={styles.vendaItem}>
+              <div className={styles.vendaItemRow}>
+                <p>Número: {venda.number}</p>
+                <p>Cliente: {venda.client.name}</p>
+              </div>
+              <div className={styles.vendaItemRow}>
+                <p>Data da Venda: {venda.date}</p>
+                <p>Total da Venda: R$ {venda.total}</p>
+              </div>
+              <div className={styles.vendaItemRow}>
+                <p>Data Inicial: {venda.dateInit}</p>
+                <p>Data Final: {venda.dateEnd}</p>
+              </div>
+              <div className={styles.vendaItemRow}>
+                <p>Data de Entrega: {venda.dateDeliver}</p>
+                <p>Data de Pagamento: {venda.datePayment}</p>
+              </div>
+              <h4>Itens da Venda:</h4>
+              <ul>
+                {venda.items.map((item) => (
+                  <li key={item.id}>
+                    <div className={styles.itemInfo}>
+                      <p>Produto: {item.product.name}</p>
+                      <p>Preço Unitário: R$ {item.price}</p>
+                      <p>Quantidade: {item.qtd}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  );
+};
+
+export default ResultadoBuscaVenda;

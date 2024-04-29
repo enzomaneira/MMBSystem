@@ -1,0 +1,50 @@
+
+.vendaItem {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.sortContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top:10px;
+}
+
+.sortContainer select {
+  padding: 5px;
+}
+
+.vendaItemRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.vendaItemRow p {
+  margin: 5px 0;
+}
+
+.itemInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+.itemInfo p {
+  margin: 0;
+}
+
+.vendaItem ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.vendaItem ul li {
+  margin-bottom: 10px;
+}
