@@ -78,6 +78,11 @@ The only specific requirements my mom had for the interface were to include pink
 
 ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/0ac5db28-f817-4346-a081-e7f838d13859)
 
+
+## Docker Infrastructure
+
+So the last thing that I needed to do was dockerize the system. I then create
+
 ## Installation
 
 Follow the following instructions to install the system on your local machine:
