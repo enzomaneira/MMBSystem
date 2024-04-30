@@ -44,7 +44,7 @@ First of all I had to go to the user(my mom) and make the proposition for the ap
 
 After defining the requirments I had to think on the data structure of the application. I knew it that I would need to have entities for Products, Clients and Orders. I have already did at college a e-commerce system so I also knew that I would need to have an OrderItem entity, and finally a separate entity for tracking the money by month.
 
-
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/86922eb2-7392-47fa-84e9-7b6b04573ce1)
 
 
 ## Installation
