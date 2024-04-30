@@ -1,4 +1,4 @@
-# MMBSystem
+# MMBSystem  ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/9ed6978f-de2e-43fc-b9e0-20af359d0924)
 
 This project began as a learning and practice journey for Java and Spring Boot, aiming to enhance software engineering skills overall. However, it evolved into something more significant.
 My mother is an educator for children aged 2 to 6 years old. Approximately 10 years ago, she started crafting homemade toys for use in her classroom, adding an educational dimension to her teaching. She found immense joy in this activity and eventually began selling these toys to supplement her income. Today, when she's not teaching, she's often creating something new; it's a true passion that has also become a source of income for her.
