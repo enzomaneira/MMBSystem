@@ -4,6 +4,17 @@ This project began as a learning and practice journey for Java and Spring Boot, 
 My mother is an educator for children aged 2 to 6 years old. Approximately 10 years ago, she started crafting homemade toys for use in her classroom, adding an educational dimension to her teaching. She found immense joy in this activity and eventually began selling these toys to supplement her income. Today, when she's not teaching, she's often creating something new; it's a true passion that has also become a source of income for her.
 I noticed that my mother used Excel to track and record sales statistics, which sparked the idea that I could assist her by developing a system to streamline these processes and provide better insights. After completing a Spring Boot course, I decided to create a system to help her manage product registration, client information, and orders. That's the essence of this project!
 
+## Summary
+
+- [System Requirements] (#system-requirements)
+- [Data Model] (#data-model)
+- [Architecture] (#architecture)
+- [Use Case] (#use-case)
+- [FrontEnd] (#frontend)
+- [Docker] (#docker)
+- [Installation] (#installation)
+
+
 ## System Requirements 
 
 First of all I had to go to the user(my mom) and make the proposition for the application. She thought the idea was great and together we discuss what the system would need for be functional for her. After some conversations we together got the following requirments:
@@ -79,7 +90,7 @@ The only specific requirements my mom had for the interface were to include pink
 ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/0ac5db28-f817-4346-a081-e7f838d13859)
 
 
-## Docker Infrastructure
+## Docker
 
 So the last thing that I needed to do was dockerize the system. The Docker infrastructure comprises two Dockerfiles and a docker-compose.yml file. For the Spring Boot application, the Dockerfile uses the openjdk:17-alpine image, copies the Spring Boot JAR file, exposes port 8080, and runs the application. For the Node.js app with MongoDB, another Dockerfile uses node:14-alpine, installs dependencies, exposes port 5173, and starts the app in development mode. The docker-compose.yml file defines services for both applications, with the Node.js app depending on MongoDB.
 
