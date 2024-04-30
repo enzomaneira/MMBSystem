@@ -6,13 +6,13 @@ I noticed that my mother used Excel to track and record sales statistics, which 
 
 ## Summary
 
-- [System Requirements] (#system-requirements)
-- [Data Model] (#data-model)
-- [Architecture] (#architecture)
-- [Use Case] (#use-case)
-- [FrontEnd] (#frontend)
-- [Docker] (#docker)
-- [Installation] (#installation)
+- [System Requirements](#system-requirements)
+- [Data Model](#data-model)
+- [Architecture](#architecture)
+- [Use Case](#use-case)
+- [FrontEnd](#frontend)
+- [Docker](#docker)
+- [Installation](#installation)
 
 
 ## System Requirements 
