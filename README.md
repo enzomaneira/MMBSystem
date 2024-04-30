@@ -1,8 +1,8 @@
 # MMBSystem
 
-This is a project that started with the goal for learning and practice Java and Spring Boot such as software engenireeing skills in general, but became part of something bigger than this.
-
-My mother is a school teacher for kids around 2 to 6 years old. About 10 years ago she started making homemade toys for using in her class for educational porpuse. She really liked doing it, so she countiued and start selling for getting an extra income. Today, if she is not at the school she is needling and building something, it's a passion for her and became something that she could make money. I start noticing that my mother use excel for registering and tracking statistics about her sales, so I always thouht that I could help her building some better graphs or anything to help her somehow. So when I finished a course about Spring Boot I have the ideia to make a system to help her register her products, her clients and orders, and that's what this is about!
+This project began as a learning and practice journey for Java and Spring Boot, aiming to enhance software engineering skills overall. However, it evolved into something more significant.
+My mother is an educator for children aged 2 to 6 years old. Approximately 10 years ago, she started crafting homemade toys for use in her classroom, adding an educational dimension to her teaching. She found immense joy in this activity and eventually began selling these toys to supplement her income. Today, when she's not teaching, she's often creating something new; it's a true passion that has also become a source of income for her.
+I noticed that my mother used Excel to track and record sales statistics, which sparked the idea that I could assist her by developing a system to streamline these processes and provide better insights. After completing a Spring Boot course, I decided to create a system to help her manage product registration, client information, and orders. That's the essence of this project!
 
 ## System Requirements 
 
@@ -86,6 +86,9 @@ So the last thing that I needed to do was dockerize the system. The Docker infra
 | ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/7ad1bf76-f627-4f4e-bb27-0ff3f0452701) | ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/c7c03dab-9949-4289-8799-595e64450495) | ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/1f1db856-915b-402f-854c-34e0c00631a4) |
 |:---:|:---:|:---:|
 
+## The End
+
+Version 1.0 of this application is now complete. My mom is already using it daily, and while she has ideas for improvements, we're saving those for version 2.0. Additionally, I plan to enhance my cloud skills by deploying this system to AWS, but that's a project for the future. For now, everything is working smoothly, being actively used, and I'm thrilled with the results and the journey of developing it. If you've read through all of this, thank you immensely. This project is very dear to me, originating from a special place, and I have big plans for its future!
 
 ## Installation
 
