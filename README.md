@@ -60,6 +60,23 @@ For wrapping up the pre-implementation phase, I also decided to create a Use Cas
 
 ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/a5050c03-853c-4bb0-bcaf-b9eeca5d8087)
 
+## FrontEnd
+
+The graphical interface wasn't my primary focus during my studies, but it held significance for my mom and provided me with an opportunity to venture into unfamiliar territory.
+
+Initially, I planned to create a top navbar with sections like registration, search, graphics, status, stock, and editing. Subsequently, I envisioned a central container on the page that would dynamically change based on the selected section. Additionally, I considered incorporating a navbar within this container for easy navigation between subsections such as registering and searching for clients, products, and orders.
+
+The only specific requirements my mom had for the interface were to include pink and yellow colors and her logo. I've included some screenshots of the interface below for those who are curious and prefer not to install it on their machine:
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/eda0cdde-4da7-438e-8a2a-96a0780cba4a)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/b324c0b2-ff1e-4b3b-954b-9ef39ec20c7d)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/1472a91a-b243-4bff-8526-d0d04619cff1)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/7dc16eaf-19f0-4388-90fc-b6382635415d)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/0ac5db28-f817-4346-a081-e7f838d13859)
 
 ## Installation
 
