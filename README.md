@@ -54,6 +54,11 @@ For designing the system architecture, I opted for a layered service architectur
 
 ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/9613b7c3-63e8-4ee6-9ac6-314daeb02539)
 
+## Use Case
+
+For wrapping up the pre-implementation phase, I also decided to create a Use Case model to help me organize the functionality required by the application and the responsibilities of each entity. The Use Case model turned out to be more extensive than I initially anticipated, but I believe it provides a comprehensive overview of the system's functionality.
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/a5050c03-853c-4bb0-bcaf-b9eeca5d8087)
 
 
 ## Installation
