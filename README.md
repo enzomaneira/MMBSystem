@@ -4,6 +4,49 @@ This is a project that started with the goal for learning and practice Java and 
 
 My mother is a school teacher for kids around 2 to 6 years old. About 10 years ago she started making homemade toys for using in her class for educational porpuse. She really liked doing it, so she countiued and start selling for getting an extra income. Today, if she is not at the school she is needling and building something, it's a passion for her and became something that she could make money. I start noticing that my mother use excel for registering and tracking statistics about her sales, so I always thouht that I could help her building some better graphs or anything to help her somehow. So when I finished a course about Spring Boot I have the ideia to make a system to help her register her products, her clients and orders, and that's what this is about!
 
+## System Requirements 
+
+First of all I had to go to the user(my mom) and make the proposition for the application. She thought the idea was great and together we discuss what the system would need for be functional for her. After some conversations we together got the following requirments:
+
+- The system must be able to register dolls.
+- The system must be able to register clients.
+- The system must be able to register orders made by clients.
+- The system must be able to search for clients, showing all orders made by a specific client.
+- The system must be able to search for a doll, showing all its attributes.
+- The system must be able to search for a doll based on its price or sales quantity.
+- The system must be able to search for orders by date range or price (min, max).
+- The system must be able to sort the search results for clients by name, purchases made, amount spent.
+- The system must be able to sort the search results for products by name, price, units sold, revenue.
+- The system must be able to sort the search results for orders by date and total.
+- The system must be able to change the order of sorting between ascending and descending.
+- Whenever an order is changed to the PAID status, the order value must be added to a count attribute for the Client and Product entities.
+-  Whenever an order is changed to the PAID status, 1 unit must be added to the count for Client and Product.
+- The system must create a Sales by Product chart, showing the quantity of each product sold over time, allowing the user to choose the product and the time range for the chart.
+- The system must create a Sales by Customer chart, showing the total value of purchases for each customer, allowing the user to choose the customer and the time range.
+- The system must create a Most Sold Products chart, showing the products with the most sales.
+- The system must create a Total Sales Value chart per day/month/year, showing the total sales over a user-chosen time range.
+- The system must create a Product Price Distribution chart, showing the revenue percentage for each product.
+- Each Product entity must have an attribute indicating the product type: [FELT, CLOTH, CHRISTMAS, SCHOOL, DECORATION, KEEPSAKE, COSTUME, EASTER, PUPPETS, MISC, REPAIR, QUIET BOOK, TOYS, STATIONERY].
+- Each Order entity must have the order status: [PENDING, IN_PROGRESS, READY, DELIVERED, PAID, CANCELED].
+- The system must change the order status, recording the date of the change.
+- Each Product, Customer, and Order entity must have a Number attribute, which will be an integer assigned by the user.
+- The system must create a Revenue entity, which will have the attributes: month, year, and value.
+- Whenever an order is changed to the PAID status, the value must be updated for the relevant Revenue entity.
+- The system must generate a table showing revenues per month and year, filtered by time.
+- The system must generate a chart showing revenue over time, with time filtering capability.
+- The system must allow the user to edit Customers and Products.
+- The system must allow the user to delete Customers, Products, and Orders.
+- The system must allow the user to register the stock for each product.
+- The system must search for a product by number and show the user the quantity in stock.
+- Whenever an order is removed, the counting statistics for the relevant entities must also be adjusted.
+
+## Data Model
+
+After defining the requirments I had to think on the data structure of the application. I knew it that I would need to have entities for Products, Clients and Orders. I have already did at college a e-commerce system so I also knew that I would need to have an OrderItem entity, and finally a separate entity for tracking the money by month.
+
+
+
+
 ## Installation
 
 Follow the following instructions to install the system on your local machine:
