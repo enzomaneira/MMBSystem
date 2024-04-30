@@ -10,7 +10,7 @@ Follow the following instructions to install the system on your local machine:
 
 ### Pre-reqs
 
-You
+You need ot be on a Linux Ubuntu Machine
 
 #### Step 1: Clone the repo:
 
