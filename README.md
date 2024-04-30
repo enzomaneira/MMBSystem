@@ -81,7 +81,13 @@ The only specific requirements my mom had for the interface were to include pink
 
 ## Docker Infrastructure
 
-So the last thing that I needed to do was dockerize the system. I then create
+So the last thing that I needed to do was dockerize the system. The Docker infrastructure comprises two Dockerfiles and a docker-compose.yml file. For the Spring Boot application, the Dockerfile uses the openjdk:17-alpine image, copies the Spring Boot JAR file, exposes port 8080, and runs the application. For the Node.js app with MongoDB, another Dockerfile uses node:14-alpine, installs dependencies, exposes port 5173, and starts the app in development mode. The docker-compose.yml file defines services for both applications, with the Node.js app depending on MongoDB.
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/7ad1bf76-f627-4f4e-bb27-0ff3f0452701)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/c7c03dab-9949-4289-8799-595e64450495)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/1f1db856-915b-402f-854c-34e0c00631a4)
 
 ## Installation
 
