@@ -42,9 +42,18 @@ First of all I had to go to the user(my mom) and make the proposition for the ap
 
 ## Data Model
 
-After defining the requirments I had to think on the data structure of the application. I knew it that I would need to have entities for Products, Clients and Orders. I have already did at college a e-commerce system so I also knew that I would need to have an OrderItem entity, and finally a separate entity for tracking the money by month.
+
+After defining the requirements, I turned my attention to the data structure of the application. I recognized the need for entities such as Products, Clients, and Orders based on my experience with an e-commerce system during college. Additionally, I understood the necessity for an OrderItem entity to manage individual items within orders, and I decided to create a separate entity to track monthly financial transactions.
+In choosing the database, I opted for MongoDB due to its NoSQL nature. This decision was driven by the flexibility offered by MongoDB, making it well-suited for handling the diverse and evolving data structures of the application.
 
 ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/86922eb2-7392-47fa-84e9-7b6b04573ce1)
+
+## Architecture
+
+For designing the system architecture, I opted for a layered service architecture that I have previously used and believed would be ideal for the application. This approach offers clear separation of responsibilities, making code maintenance easier, and provides an organized structure for development. As my main focus was on studying and practicing backend development, I knew it would require a Data Access Layer, a Service Layer, and a Rest Controller. Additionally, I aimed to use Docker to simplify setup on my mom's computer. This led me to a solution like this:
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/9613b7c3-63e8-4ee6-9ac6-314daeb02539)
+
 
 
 ## Installation
