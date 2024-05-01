@@ -94,6 +94,105 @@ The only specific requirements my mom had for the interface were to include pink
 
 So the last thing that I needed to do was dockerize the system. The Docker infrastructure comprises two Dockerfiles and a docker-compose.yml file. For the Spring Boot application, the Dockerfile uses the openjdk:17-alpine image, copies the Spring Boot JAR file, exposes port 8080, and runs the application. For the Node.js app with MongoDB, another Dockerfile uses node:14-alpine, installs dependencies, exposes port 5173, and starts the app in development mode. The docker-compose.yml file defines services for both applications, with the Node.js app depending on MongoDB.
 
+------------------------------------------------------------------
+
+
+Oi. Meu nome é enzo, eu tenho 23 anos, estou no meu último semestre da minha faculdade de Ciência da Computação em São Paulo na PUC-SP. Fiz um estágio de 2 anos no banco JP Morgan & Chase como um DevOPs e hoje em dia estou focado em terminar minha graduação e conseguir um emprego full time. Sabendo todas essas informações, preciso que vc se passe por mim para fazer um texto sobre um projeto que eu fiz. Um texto de 10 linhas sobre o trabalho a seguir. Lembre-se, nao precisa fazer a apresentação que eu fiz para você no texto, isso era apenas para contextualizar, o texto precisa ser sobre o projeto acima e precisa ser em portugues.# MMBSystem <img src="https://github.com/enzomaneira/MMBSystem/assets/62163206/9ed6978f-de2e-43fc-b9e0-20af359d0924" width="50">
+
+This project began as a learning and practice journey for Java and Spring Boot, aiming to enhance software engineering skills overall. However, it evolved into something more significant.
+My mother is an educator for children aged 2 to 6 years old. Approximately 10 years ago, she started crafting homemade toys for use in her classroom, adding an educational dimension to her teaching. She found immense joy in this activity and eventually began selling these toys to supplement her income. Today, when she's not teaching, she's often creating something new; it's a true passion that has also become a source of income for her.
+I noticed that my mother used Excel to track and record sales statistics, which sparked the idea that I could assist her by developing a system to streamline these processes and provide better insights. After completing a Spring Boot course, I decided to create a system to help her manage product registration, client information, and orders. That's the essence of this project!
+
+## Summary
+
+- [System Requirements](#system-requirements)
+- [Data Model](#data-model)
+- [Architecture](#architecture)
+- [Use Case](#use-case)
+- [FrontEnd](#frontend)
+- [Docker](#docker)
+- [Installation](#installation)
+
+
+## System Requirements 
+
+First of all I had to go to the user(my mom) and make the proposition for the application. She thought the idea was great and together we discuss what the system would need for be functional for her. After some conversations we together got the following requirments:
+
+- The system must be able to register dolls.
+- The system must be able to register clients.
+- The system must be able to register orders made by clients.
+- The system must be able to search for clients, showing all orders made by a specific client.
+- The system must be able to search for a doll, showing all its attributes.
+- The system must be able to search for a doll based on its price or sales quantity.
+- The system must be able to search for orders by date range or price (min, max).
+- The system must be able to sort the search results for clients by name, purchases made, amount spent.
+- The system must be able to sort the search results for products by name, price, units sold, revenue.
+- The system must be able to sort the search results for orders by date and total.
+- The system must be able to change the order of sorting between ascending and descending.
+- Whenever an order is changed to the PAID status, the order value must be added to a count attribute for the Client and Product entities.
+-  Whenever an order is changed to the PAID status, 1 unit must be added to the count for Client and Product.
+- The system must create a Sales by Product chart, showing the quantity of each product sold over time, allowing the user to choose the product and the time range for the chart.
+- The system must create a Sales by Customer chart, showing the total value of purchases for each customer, allowing the user to choose the customer and the time range.
+- The system must create a Most Sold Products chart, showing the products with the most sales.
+- The system must create a Total Sales Value chart per day/month/year, showing the total sales over a user-chosen time range.
+- The system must create a Product Price Distribution chart, showing the revenue percentage for each product.
+- Each Product entity must have an attribute indicating the product type: [FELT, CLOTH, CHRISTMAS, SCHOOL, DECORATION, KEEPSAKE, COSTUME, EASTER, PUPPETS, MISC, REPAIR, QUIET BOOK, TOYS, STATIONERY].
+- Each Order entity must have the order status: [PENDING, IN_PROGRESS, READY, DELIVERED, PAID, CANCELED].
+- The system must change the order status, recording the date of the change.
+- Each Product, Customer, and Order entity must have a Number attribute, which will be an integer assigned by the user.
+- The system must create a Revenue entity, which will have the attributes: month, year, and value.
+- Whenever an order is changed to the PAID status, the value must be updated for the relevant Revenue entity.
+- The system must generate a table showing revenues per month and year, filtered by time.
+- The system must generate a chart showing revenue over time, with time filtering capability.
+- The system must allow the user to edit Customers and Products.
+- The system must allow the user to delete Customers, Products, and Orders.
+- The system must allow the user to register the stock for each product.
+- The system must search for a product by number and show the user the quantity in stock.
+- Whenever an order is removed, the counting statistics for the relevant entities must also be adjusted.
+
+## Data Model
+
+
+After defining the requirements, I turned my attention to the data structure of the application. I recognized the need for entities such as Products, Clients, and Orders based on my experience with an e-commerce system during college. Additionally, I understood the necessity for an OrderItem entity to manage individual items within orders, and I decided to create a separate entity to track monthly financial transactions.
+In choosing the database, I opted for MongoDB due to its NoSQL nature. This decision was driven by the flexibility offered by MongoDB, making it well-suited for handling the diverse and evolving data structures of the application.
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/86922eb2-7392-47fa-84e9-7b6b04573ce1)
+
+## Architecture
+
+For designing the system architecture, I opted for a layered service architecture that I have previously used and believed would be ideal for the application. This approach offers clear separation of responsibilities, making code maintenance easier, and provides an organized structure for development. As my main focus was on studying and practicing backend development, I knew it would require a Data Access Layer, a Service Layer, and a Rest Controller. Additionally, I aimed to use Docker to simplify setup on my mom's computer. This led me to a solution like this:
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/9613b7c3-63e8-4ee6-9ac6-314daeb02539)
+
+## Use Case
+
+For wrapping up the pre-implementation phase, I also decided to create a Use Case model to help me organize the functionality required by the application and the responsibilities of each entity. The Use Case model turned out to be more extensive than I initially anticipated, but I believe it provides a comprehensive overview of the system's functionality.
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/a5050c03-853c-4bb0-bcaf-b9eeca5d8087)
+
+## FrontEnd
+
+The graphical interface wasn't my primary focus during my studies, but it held significance for my mom and provided me with an opportunity to venture into unfamiliar territory.
+
+Initially, I planned to create a top navbar with sections like registration, search, graphics, status, stock, and editing. Subsequently, I envisioned a central container on the page that would dynamically change based on the selected section. Additionally, I considered incorporating a navbar within this container for easy navigation between subsections such as registering and searching for clients, products, and orders.
+
+The only specific requirements my mom had for the interface were to include pink and yellow colors and her logo. I've included some screenshots of the interface below for those who are curious and prefer not to install it on their machine:
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/eda0cdde-4da7-438e-8a2a-96a0780cba4a)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/b324c0b2-ff1e-4b3b-954b-9ef39ec20c7d)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/1472a91a-b243-4bff-8526-d0d04619cff1)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/7dc16eaf-19f0-4388-90fc-b6382635415d)
+
+![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/0ac5db28-f817-4346-a081-e7f838d13859)
+
+
+## Docker
+
+So the last thing that I needed to do was dockerize the system. The Docker infrastructure comprises two Dockerfiles and a docker-compose.yml file. For the Spring Boot application, the Dockerfile uses the openjdk:17-alpine image, copies the Spring Boot JAR file, exposes port 8080, and runs the application. For the Node.js app with MongoDB, another Dockerfile uses node:14-alpine, installs dependencies, exposes port 5173, and starts the app in development mode. The docker-compose.yml file defines services for both applications, with the Node.js app depending on MongoDB.
+
 | ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/7ad1bf76-f627-4f4e-bb27-0ff3f0452701) | ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/c7c03dab-9949-4289-8799-595e64450495) | ![image](https://github.com/enzomaneira/MMBSystem/assets/62163206/1f1db856-915b-402f-854c-34e0c00631a4) |
 |:---:|:---:|:---:|
 
