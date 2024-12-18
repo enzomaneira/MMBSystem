@@ -16,7 +16,7 @@ const ResultadoBuscaProduto = () => {
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
-        const searchUrl = `http://18.206.170.47:8080/products/search?${query}&orderBy=${sortBy}&sortDirection=${sortDirection}`;
+        const searchUrl = `http://52.2.29.147:8080/products/search?${query}&orderBy=${sortBy}&sortDirection=${sortDirection}`;
         console.log("URL de Busca:", searchUrl);
         const response = await fetch(searchUrl);
         if (response.ok) {
@@ -61,7 +61,7 @@ const ResultadoBuscaProduto = () => {
 
   const handleReturnAll = async () => {
     try {
-      const response = await fetch("http://18.206.170.47:8080/products");
+      const response = await fetch("http://52.2.29.147:8080/products");
       if (response.ok) {
         const data = await response.json();
         setProdutos(data);

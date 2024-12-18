@@ -18,7 +18,7 @@ function PedidoProduto() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://18.206.170.47:8080/products');
+      const response = await axios.get('http://52.2.29.147:8080/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -38,7 +38,7 @@ function PedidoProduto() {
 
   const fetchSalesData = async () => {
     try {
-      const response = await axios.get(`http://18.206.170.47:8080/orders/fullSearch?product=${selectedProduct}`);
+      const response = await axios.get(`http://52.2.29.147:8080/orders/fullSearch?product=${selectedProduct}`);
       processData(response.data);
     } catch (error) {
       console.error('Error fetching sales data:', error);

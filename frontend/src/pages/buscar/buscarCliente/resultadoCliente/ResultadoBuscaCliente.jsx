@@ -16,7 +16,7 @@ const ResultadoBuscaCliente = () => {
   useEffect(() => {
     const fetchClientes = async () => {
       try {
-        const searchUrl = `http://18.206.170.47:8080/clients/findByNameAndContact?${query}&orderBy=${sortBy}&sortDirection=${sortDirection}`;
+        const searchUrl = `http://52.2.29.147:8080/clients/findByNameAndContact?${query}&orderBy=${sortBy}&sortDirection=${sortDirection}`;
         const response = await fetch(searchUrl);
         if (response.ok) {
           const data = await response.json();
@@ -60,7 +60,7 @@ const ResultadoBuscaCliente = () => {
 
   const handleReturnAll = async () => {
     try {
-      const response = await fetch("http://18.206.170.47:8080/clients");
+      const response = await fetch("http://52.2.29.147:8080/clients");
       if (response.ok) {
         const data = await response.json();
         setClientes(data);

@@ -22,7 +22,7 @@ const AddClienteForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Dados do cliente:", clienteInfo);
-    fetch("http://18.206.170.47:8080/clients", {
+    fetch("http://52.2.29.147:8080/clients", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

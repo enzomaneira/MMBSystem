@@ -14,7 +14,7 @@ function EstoqueMenu() {
 
   const buscarProduto = async () => {
     try {
-      const response = await fetch(`http://18.206.170.47:8080/products/findByNumber?number=${numeroProduto}`);
+      const response = await fetch(`http://52.2.29.147:8080/products/findByNumber?number=${numeroProduto}`);
       const data = await response.json();
       if (data) {
         setNomeProduto(data.name);

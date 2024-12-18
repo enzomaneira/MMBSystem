@@ -17,7 +17,7 @@ function GraficoArrecadacao() {
 
   const fetchData = async () => {
     setLoading(true);
-    const url = `http://18.206.170.47:8080/revenue/findByRange?startYear=${rangeAnoMes.startYear}&endYear=${rangeAnoMes.endYear}&startMonth=${rangeAnoMes.startMonth}&endMonth=${rangeAnoMes.endMonth}`;
+    const url = `http://52.2.29.147:8080/revenue/findByRange?startYear=${rangeAnoMes.startYear}&endYear=${rangeAnoMes.endYear}&startMonth=${rangeAnoMes.startMonth}&endMonth=${rangeAnoMes.endMonth}`;
     try {
       const response = await fetch(url);
       const data = await response.json();

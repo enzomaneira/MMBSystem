@@ -20,7 +20,7 @@ const EditarProduto = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        `http://18.206.170.47:8080/products/findByNumber?number=${searchNumber}`
+        `http://52.2.29.147:8080/products/findByNumber?number=${searchNumber}`
       );
       if (!response.ok) {
         throw new Error("Produto não encontrado");
@@ -35,7 +35,7 @@ const EditarProduto = () => {
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://18.206.170.47:8080/products/${produtoInfo.id}`, {
+      await fetch(`http://52.2.29.147:8080/products/${produtoInfo.id}`, {
         method: "DELETE",
       });
       alert("Produto deletado com sucesso");
@@ -62,7 +62,7 @@ const EditarProduto = () => {
 
   const handleUpdate = async (event) => {
     event.preventDefault();
-    const updateUrl = `http://18.206.170.47:8080/products/${produtoInfo.id}`;
+    const updateUrl = `http://52.2.29.147:8080/products/${produtoInfo.id}`;
     console.log("URL de atualização:", updateUrl);
     console.log("JSON enviado para atualização:", JSON.stringify(produtoInfo));
 

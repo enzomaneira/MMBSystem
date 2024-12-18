@@ -30,7 +30,7 @@ const AddProdutoForm = () => {
     event.preventDefault();
 
     console.log("Dados do produto:", produtoInfo);
-    fetch("http://18.206.170.47:8080/products", {
+    fetch("http://52.2.29.147:8080/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
