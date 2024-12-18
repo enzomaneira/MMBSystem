@@ -10,11 +10,11 @@ function EstoqueRegistrar() {
 
   const handleUpdateEstoque = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/products/findByNumber?number=${numeroProduto}`);
+      const response = await fetch(`http://18.206.170.47:8080/products/findByNumber?number=${numeroProduto}`);
       const data = await response.json();
 
       if (data && data.id) {
-        await fetch(`http://localhost:8080/products/${data.id}/stock?quantity=${quantidadeEstoque}`, {
+        await fetch(`http://18.206.170.47:8080/products/${data.id}/stock?quantity=${quantidadeEstoque}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'

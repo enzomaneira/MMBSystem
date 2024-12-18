@@ -17,7 +17,7 @@ function ProdutosPercentage() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/products');
+      const response = await axios.get('http://18.206.170.47:8080/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);

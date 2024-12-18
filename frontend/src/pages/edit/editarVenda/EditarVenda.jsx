@@ -14,7 +14,7 @@ const EditarVenda = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:8080/orders/findByNumber?number=${searchNumber}`
+        `http://18.206.170.47:8080/orders/findByNumber?number=${searchNumber}`
       );
       if (!response.ok) {
         throw new Error("Venda não encontrada");
@@ -30,7 +30,7 @@ const EditarVenda = () => {
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://localhost:8080/orders/${vendaInfo.id}`, {
+      await fetch(`http://18.206.170.47:8080/orders/${vendaInfo.id}`, {
         method: "DELETE",
       });
       alert("Venda deletada com sucesso");

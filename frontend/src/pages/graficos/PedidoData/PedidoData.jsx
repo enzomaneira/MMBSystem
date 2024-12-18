@@ -17,7 +17,7 @@ function PedidoData() {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/orders');
+      const response = await axios.get('http://18.206.170.47:8080/orders');
       setOrders(response.data);
     } catch (error) {
       console.error('Error fetching orders:', error);

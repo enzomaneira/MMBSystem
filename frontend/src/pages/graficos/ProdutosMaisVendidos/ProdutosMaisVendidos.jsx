@@ -15,7 +15,7 @@ function ProdutosMaisVendidos() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/products/topSelling`);
+      const response = await axios.get(`http://18.206.170.47:8080/products/topSelling`);
       const topTenProducts = response.data.slice(0, 10); 
       setTopProducts(topTenProducts);
       setShowChart(true);

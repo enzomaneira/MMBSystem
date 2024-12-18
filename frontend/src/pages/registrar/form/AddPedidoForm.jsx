@@ -21,7 +21,7 @@ const AddPedidoForm = () => {
 
   const fetchClientes = async () => {
     try {
-      const response = await fetch("http://localhost:8080/clients");
+      const response = await fetch("http://18.206.170.47:8080/clients");
       if (response.ok) {
         const data = await response.json();
         setClientes(data);
@@ -35,7 +35,7 @@ const AddPedidoForm = () => {
 
   const fetchProdutos = async () => {
     try {
-      const response = await fetch("http://localhost:8080/products");
+      const response = await fetch("http://18.206.170.47:8080/products");
       if (response.ok) {
         const data = await response.json();
         setProdutos(data);
@@ -49,7 +49,7 @@ const AddPedidoForm = () => {
 
   const createOrderItem = async (orderItemData) => {
     try {
-      const response = await fetch("http://localhost:8080/orderItems", {
+      const response = await fetch("http://18.206.170.47:8080/orderItems", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -151,7 +151,7 @@ const AddPedidoForm = () => {
     console.log("JSON enviado para o backend:", JSON.stringify(requestBody));
 
     try {
-      const response = await fetch("http://localhost:8080/orders", {
+      const response = await fetch("http://18.206.170.47:8080/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -13,7 +13,7 @@ const TabelaArrecadacao = () => {
 
   const fetchData = async () => {
     setLoading(true);
-    const url = `http://localhost:8080/revenue/findByRange?startYear=${rangeAnoMes.startYear}&endYear=${rangeAnoMes.endYear}&startMonth=${rangeAnoMes.startMonth}&endMonth=${rangeAnoMes.endMonth}&orderBy=${orderBy}`;
+    const url = `http://18.206.170.47:8080/revenue/findByRange?startYear=${rangeAnoMes.startYear}&endYear=${rangeAnoMes.endYear}&startMonth=${rangeAnoMes.startMonth}&endMonth=${rangeAnoMes.endMonth}&orderBy=${orderBy}`;
     console.log('URL:', url);
     const response = await fetch(url);
     const data = await response.json();

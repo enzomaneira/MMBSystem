@@ -16,7 +16,7 @@ function Status() {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch("http://localhost:8080/orders");
+        const response = await fetch("http://18.206.170.47:8080/orders");
         if (!response.ok) {
           throw new Error("Erro ao buscar pedidos.");
         }
@@ -36,7 +36,7 @@ function Status() {
       return;
     }
     try {
-      const url = `http://localhost:8080/orders/${pedidoSelecionado.id}/status?status=${statusAtualizado}&date=${dataSelecionada}`;
+      const url = `http://18.206.170.47:8080/orders/${pedidoSelecionado.id}/status?status=${statusAtualizado}&date=${dataSelecionada}`;
       const response = await fetch(url, {
         method: "PUT",
         headers: {

@@ -18,7 +18,7 @@ const ResultadoBuscaVenda = () => {
     const fetchVendas = async () => {
       try {
         const params = new URLSearchParams(query);
-        let searchUrl = `http://localhost:8080/orders/fullSearch?${params.toString()}&orderBy=${sortBy}&sortDirection=${sortDirection}`;
+        let searchUrl = `http://18.206.170.47:8080/orders/fullSearch?${params.toString()}&orderBy=${sortBy}&sortDirection=${sortDirection}`;
         console.log("URL de Busca:", searchUrl);
         const response = await fetch(searchUrl);
         if (response.ok) {

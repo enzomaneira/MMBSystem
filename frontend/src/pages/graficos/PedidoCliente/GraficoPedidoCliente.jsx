@@ -18,7 +18,7 @@ function GraficoPedidoCliente() {
 
   const fetchClientData = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/clients');
+      const response = await axios.get('http://18.206.170.47:8080/clients');
       setClientData(response.data);
     } catch (error) {
       console.error('Error fetching client data:', error);
@@ -38,7 +38,7 @@ function GraficoPedidoCliente() {
 
   const fetchSalesData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/orders/fullSearch?client=${selectedClient}`);
+      const response = await axios.get(`http://18.206.170.47:8080/orders/fullSearch?client=${selectedClient}`);
       processData(response.data);
     } catch (error) {
       console.error('Error fetching sales data:', error);

@@ -19,7 +19,7 @@ const EditarCliente = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:8080/clients/findByNumber?number=${searchNumber}`
+        `http://18.206.170.47:8080/clients/findByNumber?number=${searchNumber}`
       );
       if (!response.ok) {
         throw new Error("Cliente não encontrado");
@@ -35,7 +35,7 @@ const EditarCliente = () => {
 
   const handleUpdate = async (event) => {
     event.preventDefault();
-    const updateUrl = `http://localhost:8080/clients/${clientInfo.id}`;
+    const updateUrl = `http://18.206.170.47:8080/clients/${clientInfo.id}`;
     console.log("URL de atualização:", updateUrl);
     console.log("JSON enviado para atualização:", JSON.stringify(clientInfo));
 
@@ -57,7 +57,7 @@ const EditarCliente = () => {
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://localhost:8080/clients/${clientInfo.id}`, {
+      await fetch(`http://18.206.170.47:8080/clients/${clientInfo.id}`, {
         method: "DELETE",
       });
       alert("Cliente deletado com sucesso");
