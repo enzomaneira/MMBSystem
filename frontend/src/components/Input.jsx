@@ -1,13 +1,25 @@
 import React from "react";
 import styles from "./Input.module.css";
 
-const Input = ({ type, text, name, placeholder, handleOnChange, value, options, index }) => {
-  const optionsArray = Array.isArray(options) ? options : [];
+const Input = ({
+  type = "text",
+  text,
+  name,
+  placeholder = "Digite aqui...",
+  handleOnChange,
+  value,
+  options = [],
+  index,
+  errorMessage = "",
+  min,
+  max,
+  step
+}) => {
   const handleChange = (event) => {
     if (type === "number") {
       const inputValue = parseFloat(event.target.value);
-      const minValue = parseFloat(event.target.min);
-      const maxValue = parseFloat(event.target.max);
+      const minValue = min !== undefined ? parseFloat(min) : Number.MIN_SAFE_INTEGER;
+      const maxValue = max !== undefined ? parseFloat(max) : Number.MAX_SAFE_INTEGER;
 
       if (!isNaN(inputValue) && inputValue >= minValue && inputValue <= maxValue) {
         handleOnChange(name, inputValue, index);
@@ -18,12 +30,18 @@ const Input = ({ type, text, name, placeholder, handleOnChange, value, options, 
   };
 
   return (
-    <div className={styles.form_control}>
+    <div className={`${styles.form_control} ${errorMessage ? styles.error : ""}`}>
       <label htmlFor={name}>{text}:</label>
       {type === "select" ? (
-        <select name={name} id={name} className={styles.select} onChange={handleChange} value={value}>
-          <option>Selecione uma opção</option>
-          {optionsArray.map((option) => (
+        <select
+          name={name}
+          id={name}
+          className={styles.select}
+          onChange={handleChange}
+          value={value}
+        >
+          <option value="">{placeholder}</option>
+          {options.map((option) => (
             <option value={option.id} key={option.id}>
               {option.name}
             </option>
@@ -37,11 +55,12 @@ const Input = ({ type, text, name, placeholder, handleOnChange, value, options, 
           placeholder={placeholder}
           onChange={handleChange}
           value={value}
-          min={type === "number" ? "0" : undefined}
-          max={type === "number" ? "100000s" : undefined}
-          step={type === "number" ? "0.1" : undefined}
+          min={type === "number" ? min : undefined}
+          max={type === "number" ? max : undefined}
+          step={type === "number" ? step : undefined}
         />
       )}
+      {errorMessage && <span className={styles.error_message}>{errorMessage}</span>}
     </div>
   );
 };
