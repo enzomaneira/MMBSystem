@@ -101,7 +101,18 @@ const ResultadoBuscaProduto = () => {
               <p>Valor Arrecadado: R$ {produto.countMoney}</p>
               <p>Tipo de Produto: {produto.productType}</p>
               <p>Ano de Lançamento: {produto.releaseYear}</p>
-              <img src={produto.imgUrl} alt={produto.name} />
+              {produto.imgUrl ? (
+                <img
+                  src={produto.imgUrl}
+                  alt={produto.name}
+                  onError={(e) => {
+                    e.target.onerror = null; // Evita loop infinito
+                    e.target.src = "/path/to/default/image.jpg"; // Imagem padrão
+                  }}
+                />
+              ) : (
+                <p>Imagem não disponível</p>
+              )}
             </div>
           ))}
         </div>

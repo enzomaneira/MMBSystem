@@ -23,6 +23,9 @@ public class ProductResource {
     @Autowired
     private ProductService service;
 
+    @Autowired
+    private S3Service s3Service;
+
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<ProductDTO>> findAll() {
         List<Product> list = service.findAll();
@@ -134,5 +137,27 @@ public class ProductResource {
         product.setEstoque(quantity);
         service.save(product);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/upload")
+    public String uploadImagemProduto(@RequestParam("idProduto") Long idProduto,
+                                      @RequestParam("file") MultipartFile file) throws IOException {
+
+        // Salva a imagem no S3
+        File tempFile = convertMultiPartToFile(file);
+        String imageUrl = s3Service.uploadFile(tempFile);
+
+        // Atualiza o produto com a URL da imagem
+        Produto produto = produtoRepository.findById(idProduto).orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+        produto.setImagemUrl(imageUrl);
+        produtoRepository.save(produto);
+
+        return "Imagem carregada com sucesso: " + imageUrl;
+    }
+
+    private File convertMultiPartToFile(MultipartFile file) throws IOException {
+        File convFile = new File(file.getOriginalFilename());
+        file.transferTo(convFile);
+        return convFile;
     }
 }
